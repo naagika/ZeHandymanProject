@@ -1,0 +1,41 @@
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Ставим пространство между логотипом и навигацией */
+  align-items: center;
+  padding: 20px 30px; /* Добавим больше вертикальных и горизонтальных отступов */
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff6600;
+  text-decoration: none;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 50px; /* Уменьшаем немного промежутки между пунктами */
+  margin: 0; /* Убираем внешние отступы */
+  padding: 0; /* Убираем внутренние отступы */
+  margin-right: 250px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #1a1919;
+  font-weight: 500; /* Немного увеличим жирность */
+  transition: color 0.3s; /* Сделаем переход более быстрым */
+  font-size: 18px; /* Уменьшим размер шрифта для аккуратности */
+}
+
+.nav a:hover {
+  color: #ff6600;
+}
+
+/* Дополнительное улучшение: больше отступа для элементов навигации справа */
+.nav-item {
+  padding: 0 15px; /* Добавим немного горизонтальных отступов */
+}
