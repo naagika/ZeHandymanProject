@@ -16,8 +16,9 @@
             "outputPath": "dist/ze-handyman",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
+            "polyfills":  [
               "zone.js"
+          
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -39,12 +40,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumError": "5MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "10kB",
+                  "maximumError": "15kB"
                 }
               ],
               "outputHashing": "all"
@@ -92,6 +93,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

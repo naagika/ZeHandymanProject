@@ -1,10 +1,11 @@
 .navbar {
   display: flex;
-  justify-content: space-between; /* Ставим пространство между логотипом и навигацией */
-  align-items: center;
-  padding: 20px 30px; /* Добавим больше вертикальных и горизонтальных отступов */
+  justify-content: space-between; /* Логотип слева, бургер-меню справа */
+  align-items: center; /* Выровнять все элементы по вертикали по центру */
+  padding: 20px 30px; /* Отступы вокруг навигационной панели */
   background-color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative; /* Сохраняем позицию для внутренних элементов */
 }
 
 .navbar-brand {
@@ -12,30 +13,67 @@
   font-weight: bold;
   color: #ff6600;
   text-decoration: none;
+  margin-right: 35px;
 }
 
 .nav {
   list-style: none;
   display: flex;
-  gap: 50px; /* Уменьшаем немного промежутки между пунктами */
-  margin: 0; /* Убираем внешние отступы */
-  padding: 0; /* Убираем внутренние отступы */
-  margin-right: 250px;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav a {
   text-decoration: none;
   color: #1a1919;
-  font-weight: 500; /* Немного увеличим жирность */
-  transition: color 0.3s; /* Сделаем переход более быстрым */
-  font-size: 18px; /* Уменьшим размер шрифта для аккуратности */
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 18px;
 }
 
 .nav a:hover {
   color: #ff6600;
 }
 
-/* Дополнительное улучшение: больше отступа для элементов навигации справа */
-.nav-item {
-  padding: 0 15px; /* Добавим немного горизонтальных отступов */
+.burger-menu {
+  display: none; /* По умолчанию скрыто, показывается на мобильных устройствах */
+  font-size: 24px;
+  cursor: pointer;
+  align-self: end; 
+  
+}
+
+/* Стили для мобильной версии */
+@media (max-width: 768px) {
+  .nav {
+    display: none; /* Скрываем навигацию на мобильных устройствах */
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 10;
+  }
+
+  .nav.open {
+    display: flex; /* Показываем меню при нажатии на бургер */
+  }
+
+  .burger-menu {
+    display: block; /* Показываем бургер-меню на мобильных устройствах */
+    
+  }
+
+  .nav-item {
+    padding: 10px 0;
+  }
+
+  .nav a {
+    font-size: 20px;
+    font-weight: bold;
+  }
 }

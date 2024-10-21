@@ -1,19 +1,22 @@
-
-
-
 <nav class="navbar">
-<a class="navbar-brand" href="#"><i class="fas fa-hammer"></i> Ze Handyman</a>
-
-    <div class="container">
-      <ul class="nav">
-        <li><a routerLink="/"><i class="fas fa-home"></i> Home</a></li>
-        <li><a routerLink="/services"><i class="fas fa-tools"></i> Services</a></li>
-        <li><a routerLink="/projects"><i class="fas fa-hard-hat"></i> Projects</a></li>
-        <li><a routerLink="/about"><i class="fas fa-user"></i> About</a></li>
-
-        <li><a routerLink="/testimonials"><i class="fas fa-comments"></i> Testimonials</a></li>
-        <li><a routerLink="/contact"><i class="fas fa-phone"></i> Contact</a></li>
-      </ul>
-    </div>
-  </nav>
   
+  <a class="navbar-brand" href="#"><i class="fas fa-hammer"></i> Ze Handyman</a>
+
+  <!-- Бургер-меню с событием клика -->
+  <div class="burger-menu" (click)="toggleMenu()">
+    
+    &#9776; <!-- Иконка бургера -->
+  </div>
+  
+  <!-- Контейнер для навигации -->
+  <div class="container">
+    <ul class="nav" [class.open]="menuOpen">
+      <li><a routerLink="/"><i class="fas fa-home"></i> Home</a></li>
+      <li><a routerLink="/services"><i class="fas fa-tools"></i> Services</a></li>
+      <li><a routerLink="/about-projects"><i class="fas fa-hard-hat"></i> Projects</a></li>
+      <li><a routerLink="/about-projects"><i class="fas fa-user"></i> About</a></li>
+      <li><a routerLink="/testimonials"><i class="fas fa-comments"></i> Testimonials</a></li>
+      <li><a routerLink="/contacts"><i class="fas fa-phone"></i> Contact</a></li>
+    </ul>
+  </div>
+</nav>

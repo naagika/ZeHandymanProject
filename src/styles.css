@@ -48,10 +48,11 @@ body {
 
 .home h1 {
     font-size: 48px;
-    color: #ffffff; /* Оранжевый цвет для выделения */
+    color: #ffffff; /* Белый цвет для выделения */
     margin-bottom: 20px;
 }
-.cta-container{
+
+.cta-container {
     text-align: center;
 }
 
@@ -64,7 +65,7 @@ body {
     border-radius: 10px;
     display: inline-block;
     max-width: 300px;
-    margin-left: 550px;
+    margin: 0 auto;
     cursor: pointer;
     text-transform: uppercase;
     transition: background-color 0.3s, transform 0.2s;
@@ -226,12 +227,44 @@ body {
     .nav a {
         padding: 10px 0;
     }
-}
-html {
-    scroll-behavior: smooth;
-  }
-  
 
+    .cta-button {
+        margin: 0 auto;
+    }
+
+    .service-item {
+        flex: 1 1 calc(100% - 40px);
+    }
+
+    .project-item {
+        flex: 1 1 calc(100% - 40px);
+    }
+
+    .testimonial-item {
+        margin-bottom: 20px;
+    }
+
+    .service-list, .project-gallery {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home h1 {
+        font-size: 32px;
+    }
+
+    .cta-button {
+        padding: 15px 20px;
+    }
+
+    .call-button a {
+        padding: 10px 20px;
+    }
+}
+
+/* Кнопка "Показать больше" */
 .show-more-button {
     padding: 20px 30px;
     background-color: #ff6600;
@@ -240,33 +273,31 @@ html {
     border: none;
     border-radius: 10px;
     display: inline-block;
-   
     cursor: pointer;
     text-transform: uppercase;
     transition: background-color 0.3s, transform 0.2s;
     text-align: center;
-  }
-  
-  .show-more-button:hover {
+}
+
+.show-more-button:hover {
     background-color: #e65c00;
     transform: scale(1.05);
-  }
-  
-  .gallery {
+}
+
+.gallery {
     text-align: center;
     margin: 20px;
-  }
-  
-  .gallery-images {
+}
+
+.gallery-images {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
-  }
-  
-  .gallery-item img {
+}
+
+.gallery-item img {
     width: 200px;
     height: 150px;
     object-fit: cover;
-  }
-  
+}

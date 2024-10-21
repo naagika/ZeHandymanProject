@@ -1,0 +1,81 @@
+.testimonials {
+  text-align: center;
+  padding: 20px;
+}
+
+.testimonial-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Минимальная ширина колонки — 200px */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-column {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 10px 3px 5px;
+  background: #fff;
+  box-sizing: border-box;
+  height: auto;
+}
+
+.testimonial-column img {
+  max-width: 60%;
+  border-radius: 0%;
+  margin-bottom: 3px;
+}
+
+.yelp-button {
+  margin-top: 40px;
+  padding: 15px 20px;
+  background-color: #ff6600;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+}
+
+/* Скрываем последние 4 отзыва на мобильных устройствах */
+.hidden-on-mobile {
+  display: block; /* По умолчанию показывается */
+}
+
+@media (max-width: 768px) {
+  .testimonial-container {
+    grid-template-columns: repeat(2, 1fr); /* Две колонки на мобильных устройствах */
+  }
+
+  .testimonial-column {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .hidden-on-mobile {
+    display: none; /* Скрываем на мобильных устройствах */
+  }
+}
+
+/* Маленькие мобильные устройства (ширина до 480px) */
+@media (max-width: 480px) {
+  .testimonial-container {
+    grid-template-columns: repeat(2, 1fr); /* Две колонки на мобильных устройствах */
+  }
+
+  .testimonial-column {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .yelp-button {
+    width: 70%;
+    padding: 10px;
+  }
+
+  .hidden-on-mobile {
+    display: none; /* Скрываем на очень маленьких экранах */
+  }
+}

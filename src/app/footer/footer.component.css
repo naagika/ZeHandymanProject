@@ -1,0 +1,43 @@
+.footer-nav {
+    background-color: #000;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Добавлено, чтобы элементы перенеслись на новую строку при нехватке места */
+  }
+  
+  .footer-navigation li {
+    margin: 0;
+  }
+  
+  .footer-navigation a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  .footer-navigation a:hover {
+    color: #ffa500; /* Оранжевый цвет для эффекта наведения */
+  }
+  
+  /* Стили для мобильной версии */
+  @media (max-width: 768px) {
+    .footer-navigation ul {
+      flex-direction: column; /* Ссылки будут отображаться в колонку на мобильных устройствах */
+      gap: 20px; /* Уменьшение промежутка между ссылками */
+    }
+  
+    .footer-navigation a {
+      font-size: 0.9rem; /* Уменьшение размера шрифта для удобства чтения на мобильных устройствах */
+    }
+  }
+  

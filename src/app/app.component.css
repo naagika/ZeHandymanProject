@@ -1,135 +1,4 @@
-/* Slideshow container */
-.slideshow-container {
-  position: relative;
-  max-width: 548px;
-  margin: auto;
-  height: auto; /* Вместо фиксированной высоты - 'auto' */
-}
 
-/* Hide all slides by default */
-.mySlides {
-  display: none;
-}
-
-/* Ensure images fit well within container */
-.mySlides img {
-  width: 100%; /* Чтобы изображение занимало всю ширину контейнера */
-  height: auto; /* Сохранение пропорций изображений */
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-
-
-
-/* Стили для модального окна */
-.modal {
-  display: none; /* Скрываем по умолчанию */
-  position: fixed;
-  z-index: 1; /* Размещаем поверх всего */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
-}
-
-/* Показываем модальное окно, когда добавляется класс 'show' */
-.modal.show {
-  display: block;
-}
-
-/* Контент модального окна */
-.modal-content {
-  background-color: #fefefe;
-  margin: 10% auto; /* Центрируем модальное окно */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
-  border-radius: 8px;
-}
-
-/* Кнопка закрытия модального окна */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Стили для изображений в галерее */
-.gallery-images {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.gallery-item {
-  flex: 1 1 calc(33.333% - 10px);
-  box-sizing: border-box;
-}
-
-.gallery-item img {
-  width: 100%;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-.show-more-button{
-  background-color: ff6600;
-}
-
-.about {
-  padding: 50px 0;
-  text-align: center;
-  background-color: #f9f9f9;
-}
-
-.about h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.about-content {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-  color: #555;
-  line-height: 1.8;
-}
 
 
 .yelp-reviews img {
@@ -137,205 +6,75 @@
 
   margin-right: 5px;
 }
-.testimonials {
-  text-align: center;
+
+
+
+/* Основной стиль для больших экранов (до 1920x1080) */
+/* Стили уже заданы выше */
+
+/* Планшеты (ширина до 1024px) */
+@media (max-width: 1024px) {
+
+
+}
+
+/* Мобильные устройства (ширина до 768px) */
+@media (max-width: 768px) {
+ 
+
+  
+
+  
+
+
+
+
+  .slideshow-container {
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .mySlides img {
+    width: 100%;
+    height: auto;
+  }
+
  
 }
+/* Маленькие мобильные устройства (ширина до 480px) */
+@media (max-width: 480px), (max-width: 390px) {
+  .about-projects-container {
+    padding: 10px;
+    box-shadow: none; /* Убираем тень для упрощения */
+  }
 
-.testimonial-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  .about-content h2,
+  .projects-slider h2 {
+    font-size: 18px;
+  }
+
+  .about-content p,
+  .projects-slider p,
+  .about-description p {
+    font-size: 14px;
+  }
+
+  .show-more-button {
+    width: 70%;
+    padding: 10px;
+  }
+
+  .gallery-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.testimonial-column {
-  width: 30%;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px 10px 3px 5px; /* уменьшил нижний padding */
-  background: #fff;
-  box-sizing: border-box;
-  height: 240px;
-}
-
-.testimonial-column img {
-  max-width: 60%;
-  border-radius: 0%;
-  margin-bottom: 3px; /* уменьшил отступ снизу */
-}
-
-.yelp-button {
-  padding: 20px 30px;
-  background-color: #ff6600;
-  color: #fff;
-  width: auto;
-  border: none;
-  border-radius: 10px;
-  display: inline-block;
-  margin-top: 30px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: background-color 0.3s, transform 0.2s;
-  text-align: center;
-}
-
-
-.about-projects {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.about-content {
-  width: 45%;
-  padding: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  background: #ffffff;
-  text-align: center;
-}
-
-.about-content h2,
-.projects-slider h2 {
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.projects-slider {
-  width: 50%;
-  height: 365px;
-  padding: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  background: #ffffff;
-}
-
-.show-more-button {
-  margin-top: 40px;
-  padding: 15px 20px;
-  background-color: #ff6600;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  align-items: center;
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s;
-}
-
-.modal.show {
-  visibility: visible;
-  opacity: 1;
-}
-
-.modal-content {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 80%;
-  text-align: center;
-  position: relative;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.gallery-images {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-
-
-
-
-
-.about-projects-container {
-  background: #ffffff; /* Белый фон для всего контейнера */
-  border-radius: 0px; /* Округлённые края */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень для выделения */
-  padding: 40px;
-  margin: 20px auto;
-  max-width: 1700px;
-  height: 500px;
-}
-
-.content-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.about-content,
-.projects-slider {
-  width: 45%;
-}
-
-.about-content h2,
-.projects-slider h2 {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 15px;
-}
-
-.about-description p,
-.about-content p {
-  text-align: center;
-  line-height: 1.6;
-}
-
-.show-more-button {
-  padding: 20px 30px;
-  background-color: #ff6600;
-  color: #fff;
-  width: auto;
-  border: none;
-  border-radius: 10px;
-  display: inline-block;
-  margin-top: 60px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: background-color 0.3s, transform 0.2s;
-  text-align: center;
-}
-
-.projects-slider {
-  text-align: center;
+/* Максимальная высота для крупных экранов */
+@media (min-height: 1080px) {
+  .about-projects-container {
+    height: auto;
+    max-height: 90vh;
+    overflow-y: auto; /* Добавляем прокрутку, если нужно */
+  }
 }
