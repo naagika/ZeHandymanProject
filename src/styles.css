@@ -25,6 +25,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 70px;
 }
 
 .home::before {
@@ -83,6 +84,7 @@ body {
     padding: 50px 20px;
     background-color: #ffffff;
     margin: 20px 0;
+    scroll-margin-top: 70px;
 }
 
 .service-list {

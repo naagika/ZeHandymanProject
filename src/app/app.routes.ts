@@ -10,4 +10,5 @@ export const routes: Routes = [
   { path: 'testimonials', component: TestimonialsComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: '**', redirectTo: '' }
+  
 ];

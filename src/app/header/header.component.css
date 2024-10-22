@@ -1,11 +1,15 @@
 .navbar {
+  position: fixed;
+  top: 0; /* Закрепляем навбар в верхней части экрана */
+  left: 0;
+  width: 100%; /* Навбар будет по ширине всей страницы */
   display: flex;
   justify-content: space-between; /* Логотип слева, бургер-меню справа */
   align-items: center; /* Выровнять все элементы по вертикали по центру */
   padding: 20px 30px; /* Отступы вокруг навигационной панели */
   background-color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative; /* Сохраняем позицию для внутренних элементов */
+  z-index: 1000; /* Убедимся, что навбар выше остальных элементов */
 }
 
 .navbar-brand {
@@ -22,6 +26,7 @@
   gap: 50px;
   margin: 0;
   padding: 0;
+  margin-right: 400px;
 }
 
 .nav a {
@@ -35,13 +40,19 @@
 .nav a:hover {
   color: #ff6600;
 }
+.nav a.active {
+  color: #ff6600; /* Выделенный цвет для активного элемента */
+  font-weight: bold;
+}
+
 
 .burger-menu {
-  display: none; /* По умолчанию скрыто, показывается на мобильных устройствах */
+  display: none; /* Скрыто по умолчанию */
   font-size: 24px;
   cursor: pointer;
-  align-self: end; 
-  
+  align-self: center;
+  position: absolute; /* Для точного позиционирования */
+  right: 30px;
 }
 
 /* Стили для мобильной версии */
@@ -52,11 +63,12 @@
     background-color: #ffffff;
     position: absolute;
     top: 60px;
+    margin-right: 20px;
     right: 0;
     width: 200px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    z-index: 10;
+    z-index: px;
   }
 
   .nav.open {
@@ -65,7 +77,8 @@
 
   .burger-menu {
     display: block; /* Показываем бургер-меню на мобильных устройствах */
-    
+    position: absolute;
+    right: 90px; /* Показываем бургер-меню на мобильных устройствах */
   }
 
   .nav-item {

@@ -1,9 +1,12 @@
 .testimonials {
   text-align: center;
   padding: 20px;
+  scroll-margin-top: 70px;
+  
 }
 
 .testimonial-container {
+  
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Минимальная ширина колонки — 200px */
   gap: 20px;

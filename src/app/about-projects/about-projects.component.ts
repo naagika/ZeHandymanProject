@@ -1,48 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ImageSliderComponent } from '../image-slider/image-slider.component'; // Adjust the path as needed
 import { HostListener } from '@angular/core';
+
 @Component({
   selector: 'app-about-projects',
   standalone: true,
-  imports: [[CommonModule],[ImageSliderComponent]],
+  imports: [[CommonModule], [ImageSliderComponent]],
   templateUrl: './about-projects.component.html',
   styleUrl: './about-projects.component.css'
 })
 export class AboutProjectsComponent {
   isModalOpen = false;
-  slides: any[]=[
-    {
-      url: 'assets/7.jpg',
-      title: '',
-      description: '',
+  isImageModalOpen = false;
+  currentImageIndex = 0;
+  selectedImage: string = '';
 
-    },
-    {
-      url: 'assets/2.jpg',
-      title: '',
-      description: '',
+  slides: any[] = [
+    { url: 'assets/7.jpg', title: '', description: '' },
+    { url: 'assets/2.jpg', title: '', description: '' },
+    { url: 'assets/3.jpg', title: '', description: '' },
+    { url: 'assets/4.jpg', title: '', description: '' },
+    { url: 'assets/5.jpg', title: '', description: '' }
+  ];
 
-    },
-    {
-      url: 'assets/3.jpg',
-      title: '',
-      description: '',
-
-    },
-    {
-      url: 'assets/4.jpg',
-      title: '',
-      description: '',
-
-    },
-    {
-      url: 'assets/5.jpg',
-      title: '',
-      description: '',
-
-    },
-  ]
   images = [
     { url: 'assets/1.jpg' },
     { url: 'assets/2.jpg' },
@@ -64,27 +45,40 @@ export class AboutProjectsComponent {
     { url: 'assets/18.jpg' },
     { url: 'assets/19.jpg' },
     { url: 'assets/20.jpg' },
-    { url: 'assets/21.jpg' },
+    { url: 'assets/21.jpg' }
   ];
+
+  // Открытие модального окна для всех проектов
   openModal() {
     this.isModalOpen = true;
   }
-
 
   closeModal() {
     this.isModalOpen = false;
   }
 
-  
- 
-  @HostListener('document:click', ['$event'])
-  handleOutsideClick(event: Event) {
-    const targetElement = event.target as HTMLElement;
-    const modalElement = document.querySelector('.modal');
-    const buttonElement = document.querySelector('.show-more-button');
-    
-    if (this.isModalOpen && modalElement && !modalElement.contains(targetElement) && targetElement !== buttonElement) {
-      this.closeModal();
-    }
+  // Открытие модального окна для одного изображения
+  openImageModal(index: number) {
+    this.currentImageIndex = index;
+    this.selectedImage = this.images[this.currentImageIndex].url;
+    this.isImageModalOpen = true;
   }
+
+  closeImageModal() {
+    this.isImageModalOpen = false;
+  }
+
+  nextImage() {
+    this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
+    this.selectedImage = this.images[this.currentImageIndex].url;
+  }
+
+  prevImage() {
+    this.currentImageIndex =
+      (this.currentImageIndex - 1 + this.images.length) % this.images.length;
+    this.selectedImage = this.images[this.currentImageIndex].url;
+  }
+
+
+  
 }

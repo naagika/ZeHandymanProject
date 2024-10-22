@@ -1,40 +1,43 @@
-
-
 <!-- Проекты -->
-<!-- Общий контейнер для About и Projects -->
 <section id="about-projects" class="about-projects-container">
-    <div class="content-wrapper">
-      <!-- Блок About -->
-      <div class="about-content">
-        <h2>About Our Company</h2>
-        <p>Dedicated to Excellence and Quality</p>
-        <div class="about-description">
-          <p>
-            Welcome to our family-operated business! We specialize in turning your ideas into reality with our team of experienced professionals. With years of hands-on experience, we offer valuable suggestions and innovative solutions for your projects.
-            Our commitment is to deliver high-quality and long-lasting results for every customer. Contact us today to schedule an appointment or to learn more about how we can help you achieve your goals.
-          </p>
-        </div>
+  <div class="content-wrapper">
+    <!-- Блок About -->
+    <div class="about-content">
+      <h2>About Our Company</h2>
+      <p>Dedicated to Excellence and Quality</p>
+      <div class="about-description">
+        <p>Welcome to our family-operated business! We specialize in turning your ideas into reality...</p>
       </div>
-  
-      <!-- Блок Projects -->
-      <div class="projects-slider">
-        <h2>Our Projects</h2>
-        <app-image-slider [slides]="slides" [animationSpeed]="500" [indicatorsVisible]="true"></app-image-slider>
-        <button (click)="openModal()" class="show-more-button">Show More</button>
-  
-        <!-- Модальное окно -->
-        <div class="modal" [ngClass]="{ 'show': isModalOpen }">
-          <div class="modal-content">
-            <span class="close" (click)="closeModal()">&times;</span>
-            <h2>All Projects</h2>
-            <div class="gallery-images">
-              <div *ngFor="let image of images" class="gallery-item">
-                <img [src]="image.url" alt="Project Image">
-              </div>
+    </div>
+
+    <!-- Блок Projects -->
+    <div class="projects-slider">
+      <h2>Our Projects</h2>
+      <app-image-slider [slides]="slides" [animationSpeed]="500" [indicatorsVisible]="true"></app-image-slider>
+      <button (click)="openModal()" class="show-more-button">Show More</button>
+
+      <!-- Модальное окно для всех проектов -->
+      <div class="modal" [ngClass]="{ 'show': isModalOpen }">
+        <div class="modal-content">
+          <span class="close" (click)="closeModal()">&times;</span>
+          <h2>All Projects</h2>
+          <div class="gallery-images">
+            <div *ngFor="let image of images; let i = index" class="gallery-item">
+              <img [src]="image.url" alt="Project Image" (click)="openImageModal(i)">
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  
+
+    <!-- Модальное окно для одного изображения -->
+    <div class="image-modal" [ngClass]="{ 'show': isImageModalOpen }">
+      <div class="image-modal-content">
+        <span class="close" (click)="closeImageModal()">&times;</span>
+        <img [src]="selectedImage" alt="Selected Image" class="modal-image">
+        <button class="prev" (click)="prevImage()">&#10094;</button>
+        <button class="next" (click)="nextImage()">&#10095;</button>
+      </div>
+    </div>
+  </div>
+</section>
